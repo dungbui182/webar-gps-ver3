@@ -164,15 +164,15 @@
         let lastCoords = null;
         function updateCameraRotation() {
             let camera = document.querySelector("[gps-camera]");
-            if (!camera || !camera.components["gps-camera"].currentCoords) return;
-            let userPos = camera.components["gps-camera"].currentCoords;
+            if (!camera || !camera.components["gps-camera"].coords) return;
+            let userPos = camera.components["gps-camera"].coords;
             if (lastCoords) {
                 let angle = getBearing(lastCoords.latitude, lastCoords.longitude, userPos.latitude, userPos.longitude);
                 camera.setAttribute("rotation", `0 ${angle} 0`);
             }
             lastCoords = userPos;
         }
-        setInterval(updateCameraRotation, 1000);
+        //setInterval(updateCameraRotation, 1000);
 
         // setInterval(() => {
         //     let camera = document.querySelector("[gps-camera]");

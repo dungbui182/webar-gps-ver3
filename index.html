@@ -268,8 +268,8 @@
             let warningText = document.getElementById("warningText"); 
             if (bridge) {
                 let total = distance + distancePoint;
-                let t = smoothstep(minDist, maxDist, distance);
-                let scaleFactor = lerp(maxScale, minScale, total);
+                let t = smoothstep(minDist, maxDist, total);
+                let scaleFactor = lerp(maxScale, minScale, t);
                 bridge.setAttribute("scale", `${scaleFactor} ${scaleFactor} ${scaleFactor}`);
                 if (minDist > total || total > maxDist || distancePoint > 90 || distance > 175) {
                     bridge.setAttribute("visible", "false");

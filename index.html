@@ -263,21 +263,21 @@
             // Chuyển GPS thành tọa độ X, Z
             let { x, z } = gpsToMeters(bridgeLat, bridgeLon, lat, lon);
             let distance = calculateDistance(lat, lon, bridgeLat, bridgeLon).toFixed(2);
-            let distancePoint = calculateDistance(lat, lon, PointLat, PointLon).toFixed(2);
+            //let distancePoint = calculateDistance(lat, lon, PointLat, PointLon).toFixed(2);
             let bridge = document.getElementById("helix_bridge");
             let warningText = document.getElementById("warningText"); 
             if (bridge) {
-                let total = distance + distancePoint;
-                let t = smoothstep(minDist, maxDist, total);
-                let scaleFactor = lerp(maxScale, minScale, t);
-                bridge.setAttribute("scale", `${scaleFactor} ${scaleFactor} ${scaleFactor}`);
-                if (minDist > total || total > maxDist || distancePoint > 90 || distance > 175) {
-                    bridge.setAttribute("visible", "false");
-                    warningText.style.display = "block";
-                } else {
-                    bridge.setAttribute("visible", "true");
-                    warningText.style.display = "none"; 
-                }
+                //let total = distance + distancePoint;
+                //let t = smoothstep(minDist, maxDist, total);
+                //let scaleFactor = lerp(maxScale, minScale, t);
+                //bridge.setAttribute("scale", `${scaleFactor} ${scaleFactor} ${scaleFactor}`);
+                //if (minDist > total || total > maxDist || distancePoint > 90 || distance > 175) {
+                    //bridge.setAttribute("visible", "false");
+                    //warningText.style.display = "block";
+                //} else {
+                    //bridge.setAttribute("visible", "true");
+                    //warningText.style.display = "none"; 
+                //}
                 let position = bridge.getAttribute("position");
                 let rotation = bridge.getAttribute("rotation");
                 let scale = bridge.getAttribute("scale");
